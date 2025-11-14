@@ -1,0 +1,1 @@
+{:lint-as {nandoolle.langchain4clj.macros/defbuilder clojure.core/def}}

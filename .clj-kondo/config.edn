@@ -1,0 +1,27 @@
+{:linters {:unresolved-symbol {:level :warning
+                               :exclude [(nandoolle.langchain4clj.structured/Person)]}
+           :unused-binding {:level :warning}
+           :unused-import {:level :warning
+                          ;; These imports are used in defbuilder macro expansions
+                          ;; clj-kondo doesn't detect static method calls in macros
+                           :exclude [dev.langchain4j.model.openai.OpenAiChatModel
+                                     dev.langchain4j.model.anthropic.AnthropicChatModel
+                                     dev.langchain4j.model.googleai.GoogleAiGeminiChatModel
+                                     dev.langchain4j.model.vertexai.VertexAiGeminiChatModel
+                                     dev.langchain4j.model.ollama.OllamaChatModel
+                                     dev.langchain4j.model.openai.OpenAiStreamingChatModel
+                                     dev.langchain4j.model.anthropic.AnthropicStreamingChatModel
+                                     dev.langchain4j.model.ollama.OllamaStreamingChatModel
+                                     dev.langchain4j.model.openai.OpenAiImageModel]}
+           :unused-private-var {:level :warning}
+           :unused-referred-var {:level :warning}
+           :unused-namespace {:level :warning}
+           :refer-all {:level :warning}
+           :missing-docstring {:level :off}
+           :redundant-do {:level :warning}
+           :redundant-let {:level :warning}
+           :type-mismatch {:level :warning}
+           :invalid-arity {:level :warning}}
+ :lint-as {nandoolle.langchain4clj.macros/defbuilder clojure.core/defn}
+ :hooks {:macros {nandoolle.langchain4clj.structured/defstructured
+                  nandoolle.langchain4clj.macros/defbuilder}}}
