@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to LangChain4Clj! This document provides guidelines and standards for contributing to the project.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
@@ -84,7 +84,7 @@ All contributions must meet these quality standards before being merged.
 
 ### Before Committing
 
-**✅ Mandatory Checks:**
+**Mandatory Checks:**
 
 1. **All tests pass**
    ```bash
@@ -106,22 +106,22 @@ All contributions must meet these quality standards before being merged.
 ### Import Guidelines
 
 **Do:**
-- ✅ Remove unused imports immediately
-- ✅ Group imports logically (Java first, then Clojure libs)
-- ✅ Use specific imports for clarity
+- Remove unused imports immediately
+- Group imports logically (Java first, then Clojure libs)
+- Use specific imports for clarity
 
 **Don't:**
-- ❌ Leave unused imports
-- ❌ Use wildcard imports (`import *`)
-- ❌ Import classes you don't use
+- Leave unused imports
+- Use wildcard imports (`import *`)
+- Import classes you don't use
 
 **Example:**
 ```clojure
-;; ❌ BAD: Unused imports
+;; BAD: Unused imports
 (:import [dev.langchain4j.model.chat ChatModel ChatRequest]
          [dev.langchain4j.data.message AiMessage]) ;; AiMessage not used
 
-;; ✅ GOOD: Only what's needed
+;; GOOD: Only what's needed
 (:import [dev.langchain4j.model.chat ChatModel]
          [dev.langchain4j.model.chat.request ChatRequest])
 ```
@@ -131,11 +131,11 @@ All contributions must meet these quality standards before being merged.
 **Unused bindings** should be prefixed with `_` to show intent:
 
 ```clojure
-;; ❌ BAD: Unused binding without indication
+;; BAD: Unused binding without indication
 (defn process [{:keys [name age email]}]
   (str "Hello " name))  ;; age and email unused
 
-;; ✅ GOOD: Indicate intentionally unused
+;; GOOD: Indicate intentionally unused
 (defn process [{:keys [name _age _email]}]
   (str "Hello " name))
 ```
@@ -143,11 +143,11 @@ All contributions must meet these quality standards before being merged.
 **Destructuring** should only include what's used:
 
 ```clojure
-;; ❌ BAD: Destructure everything
+;; BAD: Destructure everything
 (let [{:keys [a b c d e]} config]
   (+ a b))  ;; c, d, e unused
 
-;; ✅ GOOD: Only what's needed
+;; GOOD: Only what's needed
 (let [{:keys [a b]} config]
   (+ a b))
 ```
@@ -155,10 +155,10 @@ All contributions must meet these quality standards before being merged.
 ### Function Guidelines
 
 **Public functions** must have:
-- ✅ Docstring explaining purpose
-- ✅ Parameter descriptions
-- ✅ Return value description
-- ✅ Usage examples (if complex)
+- Docstring explaining purpose
+- Parameter descriptions
+- Return value description
+- Usage examples (if complex)
 
 **Example:**
 ```clojure
@@ -182,10 +182,10 @@ All contributions must meet these quality standards before being merged.
 ### Namespace Guidelines
 
 **Namespace declarations** should:
-- ✅ Have descriptive docstring
-- ✅ Group requires logically
-- ✅ Use consistent aliasing (`as m`, `as str`, etc.)
-- ✅ Remove unused requires immediately
+- Have descriptive docstring
+- Group requires logically
+- Use consistent aliasing (`as m`, `as str`, etc.)
+- Remove unused requires immediately
 
 **Example:**
 ```clojure
@@ -209,10 +209,10 @@ All contributions must meet these quality standards before being merged.
 3. **Remove the TODO** from code
 
 ```clojure
-;; ❌ BAD: TODO without tracking
+;; BAD: TODO without tracking
 ;; TODO: Add support for streaming
 
-;; ✅ GOOD: Issue reference
+;; GOOD: Issue reference
 ;; Streaming support tracked in #42
 ```
 
@@ -221,12 +221,12 @@ All contributions must meet these quality standards before being merged.
 **Always handle errors gracefully:**
 
 ```clojure
-;; ✅ GOOD: Descriptive error messages
+;; GOOD: Descriptive error messages
 (when-not api-key
   (throw (IllegalArgumentException. 
           ":api-key is required for OpenAI provider")))
 
-;; ✅ GOOD: Validate inputs
+;; GOOD: Validate inputs
 (defn chat [model message]
   {:pre [(some? model) (string? message)]}
   (.chat model message))
@@ -248,10 +248,10 @@ src/langchain4clj/core.clj
 ### Test Quality
 
 **Every test must:**
-- ✅ Have clear `testing` descriptions
-- ✅ Test one thing
-- ✅ Be independent (no shared state)
-- ✅ Be deterministic (no flaky tests)
+- Have clear `testing` descriptions
+- Test one thing
+- Be independent (no shared state)
+- Be deterministic (no flaky tests)
 
 **Example:**
 ```clojure
@@ -270,9 +270,9 @@ src/langchain4clj/core.clj
 ### Test Coverage
 
 **Aim for:**
-- ✅ All public functions tested
-- ✅ Happy path + error cases
-- ✅ Edge cases (nil, empty, large inputs)
+- All public functions tested
+- Happy path + error cases
+- Edge cases (nil, empty, large inputs)
 
 ---
 
@@ -309,12 +309,12 @@ clojure -T:build jar
 ### 4. Commit with Clear Messages
 
 ```bash
-# ✅ GOOD: Clear, imperative commit messages
+# GOOD: Clear, imperative commit messages
 git commit -m "Add streaming support for Anthropic models"
 git commit -m "Fix memory leak in chat memory"
 git commit -m "Update README with new examples"
 
-# ❌ BAD: Vague messages
+# BAD: Vague messages
 git commit -m "Fix stuff"
 git commit -m "WIP"
 ```
@@ -429,4 +429,4 @@ Contributors are recognized in:
 - CHANGELOG.md (for significant contributions)
 - GitHub contributors page
 
-Thank you for contributing! 🎉
+Thank you for contributing! 
