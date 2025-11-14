@@ -75,11 +75,12 @@ test-summary-*.txt
 *.tmp
 *.temp
 
-# Documentation - ignore everything except images
+# Documentation - ignore everything except images and cljdoc config
 /doc
 /docs/*
 !/docs/images
 !/docs/images/**
+!/docs/cljdoc.edn
 ROADMAP.md
 
 # Coverage reports
