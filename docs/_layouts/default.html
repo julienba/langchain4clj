@@ -12,8 +12,9 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-                <p class="subtitle">{{ site.description }}</p>
+                <a href="{{ '/' | relative_url }}" class="logo-link">
+                    <img src="{{ '/images/logo.png' | relative_url }}" alt="LangChain4Clj Logo" class="sidebar-logo">
+                </a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                     <span class="theme-toggle-icon">🌙</span>
                 </button>
@@ -67,3 +68,4 @@
     <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 </body>
 </html>
+
