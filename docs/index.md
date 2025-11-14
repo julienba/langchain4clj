@@ -3,9 +3,19 @@ layout: default
 title: Home
 ---
 
+<p align="center">
+  <img src="images/logo.png" alt="LangChain4Clj Logo" width="300">
+</p>
+
 # LangChain4Clj
 
 A Clojure wrapper for [LangChain4j](https://github.com/langchain4j/langchain4j) - Build powerful AI applications with the simplicity and elegance of Clojure.
+
+<p align="center">
+  <a href="https://github.com/nandoolle/langchain4clj"><strong>GitHub</strong></a> •
+  <a href="https://clojars.org/io.github.nandoolle/langchain4clj"><strong>Clojars</strong></a> •
+  <a href="https://github.com/nandoolle/langchain4clj/blob/main/CHANGELOG.md"><strong>Changelog</strong></a>
+</p>
 
 ## Quick Start
 
