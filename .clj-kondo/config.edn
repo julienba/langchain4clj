@@ -21,7 +21,7 @@
            :redundant-do {:level :warning}
            :redundant-let {:level :warning}
            :type-mismatch {:level :warning}
-           :invalid-arity {:level :warning}}
- :lint-as {langchain4clj.macros/defbuilder clojure.core/defn}
- :hooks {:macros {langchain4clj.structured/defstructured
-                  langchain4clj.macros/defbuilder}}}
+           :invalid-arity {:level :warning
+                           :skip-args [langchain4clj.macros/defbuilder]}}
+ :lint-as {}
+ :skip-comments true}

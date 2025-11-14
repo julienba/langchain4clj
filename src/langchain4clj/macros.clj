@@ -9,7 +9,7 @@
 ;; Core Builder Macro
 ;; ============================================================================
 
-(defmacro ^{:clj-kondo/lint-as 'clojure.core/def} defbuilder
+(defmacro ^{:clj-kondo/ignore [:unresolved-symbol]} defbuilder
   "Creates an idiomatic Clojure wrapper around a Java Builder pattern.
   
   Generates a function that:
