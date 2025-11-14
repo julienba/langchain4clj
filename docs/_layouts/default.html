@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
+    <link rel="icon" type="image/png" href="{{ '/images/icon.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     <div class="container">
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-toggle-icon">🌙</span>
+            </button>
             <div class="sidebar-header">
                 <a href="{{ '/' | relative_url }}" class="logo-link">
                     <img src="{{ '/images/logo.png' | relative_url }}" alt="LangChain4Clj Logo" class="sidebar-logo">
                 </a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="theme-toggle-icon">🌙</span>
-                </button>
             </div>
             
             <nav class="nav">
