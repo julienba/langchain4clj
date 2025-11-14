@@ -1,0 +1,25 @@
+{;; Specify that this is a Clojure-only library
+ :cljdoc/languages [:clj]
+
+ ;; Documentation tree structure
+ ;; Note: Optional namespaces (tools.malli, tools.schema) won't have API docs
+ ;; on cljdoc since malli/schema are optional dependencies.
+ ;; These features are documented in TOOLS.md instead.
+ :cljdoc.doc/tree [["Readme" {:file "README.md"}]
+                   ["Getting Started"
+                    ["Installation" {:file "README.md"}]
+                    ["Quick Start" {:file "README.md"}]]
+                   ["Core Features"
+                    ["Streaming Responses" {:file "docs/STREAMING.md"}]
+                    ["Image Generation" {:file "docs/IMAGE.md"}]
+                    ["Native JSON Mode" {:file "docs/NATIVE_JSON.md"}]
+                    ["Structured Output" {:file "docs/STRUCTURED_OUTPUT.md"}]]
+                   ["Advanced Features"
+                    ["Tools & Function Calling" {:file "docs/TOOLS.md"}]
+                    ["Assistant System" {:file "docs/ASSISTANT.md"}]
+                    ["Multi-Agent Systems" {:file "docs/AGENTS.md"}]
+                    ["RAG (Document Processing)" {:file "docs/RAG.md"}]
+                    ["Resilience & Failover" {:file "docs/RESILIENCE.md"}]]
+                   ["Reference"
+                    ["Changelog" {:file "CHANGELOG.md"}]
+                    ["Contributing" {:file "CONTRIBUTING.md"}]]]}

@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+# Using GitHub Pages gem for compatibility
+gem "github-pages", group: :jekyll_plugins
+
+# Required for Ruby 3.0+
+gem "webrick", "~> 1.8"
