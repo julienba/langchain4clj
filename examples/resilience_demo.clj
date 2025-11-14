@@ -6,8 +6,8 @@
   2. Circuit breaker protection (Phase 2)
   3. Real-world production scenarios
   4. Monitoring and troubleshooting"
-  (:require [nandoolle.langchain4clj.core :as llm]
-            [nandoolle.langchain4clj.resilience :as resilience]))
+  (:require [langchain4clj.core :as llm]
+            [langchain4clj.resilience :as resilience]))
 
 ;; =============================================================================
 ;; Example 1: Basic Failover (Phase 1)

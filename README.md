@@ -28,7 +28,7 @@ LangChain4Clj is a **pure translation layer** - we wrap LangChain4j's functional
 Add to your `deps.edn`:
 
 ```clojure
-{:deps {nandoolle/langchain4clj {:git/url "https://github.com/nandoolle/langchain4clj"
+{:deps {langchain4clj {:git/url "https://github.com/langchain4clj"
                                   :git/sha "LATEST_COMMIT_SHA"}}}
 ```
 
@@ -49,7 +49,7 @@ With schema libraries (optional):
 ### Basic Chat
 
 ```clojure
-(require '[nandoolle.langchain4clj.core :as llm])
+(require '[langchain4clj.core :as llm])
 
 ;; Create a model
 (def model (llm/create-model {:provider :openai
@@ -178,7 +178,7 @@ Force the LLM to return valid JSON (supported by OpenAI, Anthropic):
 Receive tokens in real-time as they're generated for better UX:
 
 ```clojure
-(require '[nandoolle.langchain4clj.streaming :as streaming])
+(require '[langchain4clj.streaming :as streaming])
 
 ;; Create streaming model
 (def streaming-model
@@ -229,7 +229,7 @@ Receive tokens in real-time as they're generated for better UX:
 Generate images using DALL-E 3 and DALL-E 2:
 
 ```clojure
-(require '[nandoolle.langchain4clj.image :as image])
+(require '[langchain4clj.image :as image])
 
 ;; Create an image model
 (def model (image/create-image-model
@@ -299,7 +299,7 @@ LangChain4Clj offers two APIs for creating tools:
 The simplest way to create tools with inline schema validation:
 
 ```clojure
-(require '[nandoolle.langchain4clj.tools :as tools])
+(require '[langchain4clj.tools :as tools])
 
 ;; Define a tool with defn-like syntax
 (tools/deftool get-pokemon
@@ -406,7 +406,7 @@ LangChain4Clj automatically handles the naming mismatch between Clojure's kebab-
 ### Assistant with Memory & Tools
 
 ```clojure
-(require '[nandoolle.langchain4clj.assistant :as assistant])
+(require '[langchain4clj.assistant :as assistant])
 
 ;; Create an assistant with memory and tools
 (def my-assistant
@@ -432,7 +432,7 @@ LangChain4Clj automatically handles the naming mismatch between Clojure's kebab-
 ### Structured Output
 
 ```clojure
-(require '[nandoolle.langchain4clj.structured :as structured])
+(require '[langchain4clj.structured :as structured])
 
 ;; Define a structured type
 (structured/defstructured Recipe
@@ -452,7 +452,7 @@ LangChain4Clj automatically handles the naming mismatch between Clojure's kebab-
 ### Multi-Agent System
 
 ```clojure
-(require '[nandoolle.langchain4clj.agents :as agents])
+(require '[langchain4clj.agents :as agents])
 
 ;; Create specialized agents
 (def researcher (agents/create-agent {:model model :role "researcher"}))
@@ -472,7 +472,7 @@ LangChain4Clj automatically handles the naming mismatch between Clojure's kebab-
 Build production-ready systems with automatic failover between LLM providers:
 
 ```clojure
-(require '[nandoolle.langchain4clj.resilience :as resilience])
+(require '[langchain4clj.resilience :as resilience])
 
 ;; Basic failover with retry
 (def resilient-model
@@ -581,7 +581,7 @@ See [ROADMAP.md](ROADMAP.md) for full details.
 
 We welcome contributions! Check out:
 
-- [Open Issues](https://github.com/nandoolle/langchain4clj/issues)
+- [Open Issues](https://github.com/langchain4clj/issues)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 

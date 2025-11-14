@@ -37,7 +37,7 @@ git clone https://github.com/YOUR_USERNAME/langchain4clj.git
 cd langchain4clj
 
 # Add upstream remote
-git remote add upstream https://github.com/nandoolle/langchain4clj.git
+git remote add upstream https://github.com/langchain4clj.git
 ```
 
 ---
@@ -51,7 +51,7 @@ git remote add upstream https://github.com/nandoolle/langchain4clj.git
 clojure -M:test
 
 # Run specific namespace
-clojure -M:test -n nandoolle.langchain4clj.core-test
+clojure -M:test -n langchain4clj.core-test
 
 # Run with all schema libraries
 clojure -M:test:with-all-schemas
@@ -189,12 +189,12 @@ All contributions must meet these quality standards before being merged.
 
 **Example:**
 ```clojure
-(ns nandoolle.langchain4clj.core
+(ns langchain4clj.core
   "Core wrapper functions for LangChain4j.
    
    Provides idiomatic Clojure interface for chat models,
    supporting OpenAI, Anthropic, Google Gemini, and Ollama."
-  (:require [nandoolle.langchain4clj.macros :as macros])
+  (:require [langchain4clj.macros :as macros])
   (:import [dev.langchain4j.model.chat ChatModel]
            [dev.langchain4j.model.openai OpenAiChatModel]
            [java.time Duration]))
@@ -241,8 +241,8 @@ All contributions must meet these quality standards before being merged.
 Tests should mirror the source structure:
 
 ```
-src/nandoolle/langchain4clj/core.clj
-→ test/nandoolle/langchain4clj/core_test.clj
+src/langchain4clj/core.clj
+→ test/langchain4clj/core_test.clj
 ```
 
 ### Test Quality
@@ -411,8 +411,8 @@ langchain4clj/
 
 - **Documentation**: Check [docs/README.md](docs/README.md)
 - **Examples**: See [examples/](examples/) directory
-- **Issues**: Search existing [GitHub Issues](https://github.com/nandoolle/langchain4clj/issues)
-- **Discussions**: Ask questions in [GitHub Discussions](https://github.com/nandoolle/langchain4clj/discussions)
+- **Issues**: Search existing [GitHub Issues](https://github.com/langchain4clj/issues)
+- **Discussions**: Ask questions in [GitHub Discussions](https://github.com/langchain4clj/discussions)
 
 ---
 

@@ -1,4 +1,4 @@
-(ns nandoolle.langchain4clj.tools.protocols
+(ns langchain4clj.tools.protocols
   "Protocolo unificado para suportar múltiplas bibliotecas de schema/spec")
 
 ;; ============================================================================
@@ -20,10 +20,10 @@
 ;; IMPLEMENTAÇÃO PARA CLOJURE.SPEC
 ;; ============================================================================
 
-(ns nandoolle.langchain4clj.tools.spec
+(ns langchain4clj.tools.spec
   (:require [clojure.spec.alpha :as spec]
             [clojure.spec.gen.alpha :as gen]
-            [nandoolle.langchain4clj.tools.protocols :as p]))
+            [langchain4clj.tools.protocols :as p]))
 
 (defrecord SpecSchema [spec-key registry]
   p/SchemaProvider
@@ -85,10 +85,10 @@
 ;; IMPLEMENTAÇÃO PARA PLUMATIC SCHEMA
 ;; ============================================================================
 
-(ns nandoolle.langchain4clj.tools.schema
+(ns langchain4clj.tools.schema
   (:require [schema.core :as s]
             [schema.coerce :as coerce]
-            [nandoolle.langchain4clj.tools.protocols :as p]))
+            [langchain4clj.tools.protocols :as p]))
 
 (defrecord SchemaSchema [schema]
   p/SchemaProvider
@@ -122,12 +122,12 @@
 ;; IMPLEMENTAÇÃO PARA MALLI
 ;; ============================================================================
 
-(ns nandoolle.langchain4clj.tools.malli
+(ns langchain4clj.tools.malli
   (:require [malli.core :as m]
             [malli.error :as me]
             [malli.json-schema :as mjs]
             [malli.transform :as mt]
-            [nandoolle.langchain4clj.tools.protocols :as p]))
+            [langchain4clj.tools.protocols :as p]))
 
 (defrecord MalliSchema [schema]
   p/SchemaProvider
@@ -150,11 +150,11 @@
 ;; DETECTOR AUTOMÁTICO E FACTORY
 ;; ============================================================================
 
-(ns nandoolle.langchain4clj.tools
-  (:require [nandoolle.langchain4clj.tools.protocols :as p]
-            [nandoolle.langchain4clj.tools.spec :as spec-impl]
-            [nandoolle.langchain4clj.tools.schema :as schema-impl]
-            [nandoolle.langchain4clj.tools.malli :as malli-impl]
+(ns langchain4clj.tools
+  (:require [langchain4clj.tools.protocols :as p]
+            [langchain4clj.tools.spec :as spec-impl]
+            [langchain4clj.tools.schema :as schema-impl]
+            [langchain4clj.tools.malli :as malli-impl]
             [clojure.spec.alpha :as spec]
             [schema.core :as s]
             [malli.core :as m])

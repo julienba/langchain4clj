@@ -15,8 +15,8 @@
         dev.langchain4j/langchain4j-document-parser-apache-tika {:mvn/version "1.8.0-beta15"}
         metosin/jsonista {:mvn/version "0.3.10"}}
  :aliases
- {:run-m {:main-opts ["-m" "nandoolle.langchain4clj"]}
-  :run-x {:ns-default nandoolle.langchain4clj
+ {:run-m {:main-opts ["-m" "langchain4clj"]}
+  :run-x {:ns-default langchain4clj
           :exec-fn greet
           :exec-args {:name "Clojure"}}
   :build {:deps {io.github.clojure/tools.build

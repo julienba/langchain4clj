@@ -1,5 +1,5 @@
 {:linters {:unresolved-symbol {:level :warning
-                               :exclude [(nandoolle.langchain4clj.structured/Person)]}
+                               :exclude [(langchain4clj.structured/Person)]}
            :unused-binding {:level :warning}
            :unused-import {:level :warning
                           ;; These imports are used in defbuilder macro expansions
@@ -22,6 +22,6 @@
            :redundant-let {:level :warning}
            :type-mismatch {:level :warning}
            :invalid-arity {:level :warning}}
- :lint-as {nandoolle.langchain4clj.macros/defbuilder clojure.core/defn}
- :hooks {:macros {nandoolle.langchain4clj.structured/defstructured
-                  nandoolle.langchain4clj.macros/defbuilder}}}
+ :lint-as {langchain4clj.macros/defbuilder clojure.core/defn}
+ :hooks {:macros {langchain4clj.structured/defstructured
+                  langchain4clj.macros/defbuilder}}}

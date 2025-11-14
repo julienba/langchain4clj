@@ -1,6 +1,6 @@
 (ns examples.idiomatic-core-demo
   "Demonstrates the new idiomatic Core API (v0.2.0)."
-  (:require [nandoolle.langchain4clj.core :as core]))
+  (:require [langchain4clj.core :as core]))
 
 (println "=== Idiomatic Core API Demo ===\n")
 

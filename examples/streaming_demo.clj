@@ -1,6 +1,6 @@
 (ns streaming-demo
   "Interactive streaming chat demo"
-  (:require [nandoolle.langchain4clj.streaming :as streaming]))
+  (:require [langchain4clj.streaming :as streaming]))
 
 ;; =============================================================================
 ;; Example 1: Basic Streaming

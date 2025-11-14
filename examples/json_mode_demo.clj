@@ -3,7 +3,7 @@
   
   Native JSON mode forces the LLM to return valid JSON guaranteed by the provider
   (OpenAI, Anthropic), eliminating parsing errors and retry logic."
-  (:require [nandoolle.langchain4clj.core :as llm]
+  (:require [langchain4clj.core :as llm]
             [clojure.data.json :as json])
   (:import [dev.langchain4j.model.chat.request ResponseFormat]))
 

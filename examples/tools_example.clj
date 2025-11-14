@@ -1,8 +1,8 @@
 (ns examples.tools-example
   "Exemplo completo de como tools funcionariam com a API proposta"
-  (:require [nandoolle.langchain4clj :as llm]
-            [nandoolle.langchain4clj.agents :as agents]
-            [nandoolle.langchain4clj.tools :as tools] ; namespace proposto
+  (:require [langchain4clj :as llm]
+            [langchain4clj.agents :as agents]
+            [langchain4clj.tools :as tools] ; namespace proposto
             [malli.core :as m])
   (:import [dev.langchain4j.agent.tool ToolSpecification]
            [dev.langchain4j.agent.tool ToolExecutionRequest]

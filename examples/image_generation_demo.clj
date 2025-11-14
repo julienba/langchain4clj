@@ -1,6 +1,6 @@
 (ns image-generation-demo
   "Image generation examples using DALL-E 3"
-  (:require [nandoolle.langchain4clj.image :as image]))
+  (:require [langchain4clj.image :as image]))
 
 ;; =============================================================================
 ;; Setup

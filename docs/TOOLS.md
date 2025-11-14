@@ -38,8 +38,8 @@ LangChain4Clj provides two APIs for creating tools that AI models can call:
 ## Quick Start
 
 ```clojure
-(require '[nandoolle.langchain4clj.tools :as tools]
-         '[nandoolle.langchain4clj.assistant :as assistant])
+(require '[langchain4clj.tools :as tools]
+         '[langchain4clj.assistant :as assistant])
 
 ;; 1. Define a tool
 (tools/deftool get-weather
@@ -843,4 +843,4 @@ Return descriptive strings, not exceptions. The AI needs text responses!
 - Check [examples/](../examples/) for complete demos
 - Read [ASSISTANT.md](ASSISTANT.md) for using tools with assistants
 
-**Having issues?** [Open an issue on GitHub](https://github.com/nandoolle/langchain4clj/issues)
+**Having issues?** [Open an issue on GitHub](https://github.com/langchain4clj/issues)

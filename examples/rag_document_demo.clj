@@ -8,7 +8,7 @@
   4. Use threading-first patterns
   
   Run with: clojure -M:dev -m rag-document-demo"
-  (:require [nandoolle.langchain4clj.rag.document :as doc]))
+  (:require [langchain4clj.rag.document :as doc]))
 
 ;; =============================================================================
 ;; Example 1: Load Single Document

@@ -22,7 +22,7 @@ No LangChain4j 1.0.0, `ChatModel` tem **4 overloads** do método `chat`:
 ### Resposta Simples (String)
 
 ```clojure
-(require '[nandoolle.langchain4clj.test-utils :as test-utils])
+(require '[langchain4clj.test-utils :as test-utils])
 
 (deftest meu-teste
   (let [model (test-utils/create-java-mock-chat-model "Resposta fixa")]
@@ -157,10 +157,10 @@ No LangChain4j 1.0.0, `ChatModel` tem **4 overloads** do método `chat`:
 ### Teste de Core
 
 ```clojure
-(ns nandoolle.langchain4clj.core-test
+(ns langchain4clj.core-test
   (:require [clojure.test :refer [deftest is testing]]
-            [nandoolle.langchain4clj.core :as core]
-            [nandoolle.langchain4clj.test-utils :as test-utils]))
+            [langchain4clj.core :as core]
+            [langchain4clj.test-utils :as test-utils]))
 
 (deftest test-chat-basic
   (testing "Chat básico funciona"
@@ -176,10 +176,10 @@ No LangChain4j 1.0.0, `ChatModel` tem **4 overloads** do método `chat`:
 ### Teste de Tools
 
 ```clojure
-(ns nandoolle.langchain4clj.tools-test
+(ns langchain4clj.tools-test
   (:require [clojure.test :refer [deftest is testing]]
-            [nandoolle.langchain4clj.tools :as tools]
-            [nandoolle.langchain4clj.test-utils :as test-utils]))
+            [langchain4clj.tools :as tools]
+            [langchain4clj.test-utils :as test-utils]))
 
 (deftest test-tool-execution
   (testing "Tool execution works"

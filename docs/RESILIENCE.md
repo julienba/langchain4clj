@@ -53,8 +53,8 @@ The resilience system provides automatic failover between LLM providers with int
 The resilience system is included in langchain4clj. No additional dependencies needed.
 
 ```clojure
-(require '[nandoolle.langchain4clj.core :as llm]
-         '[nandoolle.langchain4clj.resilience :as resilience])
+(require '[langchain4clj.core :as llm]
+         '[langchain4clj.resilience :as resilience])
 ```
 
 ### Basic Usage (Phase 1)
@@ -524,8 +524,8 @@ Enable circuit breaker logging in production:
 
 ```clojure
 (ns myapp.chatbot
-  (:require [nandoolle.langchain4clj.core :as llm]
-            [nandoolle.langchain4clj.resilience :as resilience]))
+  (:require [langchain4clj.core :as llm]
+            [langchain4clj.resilience :as resilience]))
 
 (def chatbot-model
   (resilience/create-resilient-model
@@ -556,9 +556,9 @@ Enable circuit breaker logging in production:
 
 ```clojure
 (ns myapp.content
-  (:require [nandoolle.langchain4clj.core :as llm]
-            [nandoolle.langchain4clj.resilience :as resilience]
-            [nandoolle.langchain4clj.streaming :as streaming]))
+  (:require [langchain4clj.core :as llm]
+            [langchain4clj.resilience :as resilience]
+            [langchain4clj.streaming :as streaming]))
 
 (def content-model
   (resilience/create-resilient-model
@@ -587,9 +587,9 @@ Enable circuit breaker logging in production:
 
 ```clojure
 (ns myapp.api
-  (:require [nandoolle.langchain4clj.core :as llm]
-            [nandoolle.langchain4clj.resilience :as resilience]
-            [nandoolle.langchain4clj.tools :as tools]))
+  (:require [langchain4clj.core :as llm]
+            [langchain4clj.resilience :as resilience]
+            [langchain4clj.tools :as tools]))
 
 (def weather-tool
   (tools/create-tool
@@ -622,8 +622,8 @@ Enable circuit breaker logging in production:
 
 ```clojure
 (ns myapp.distributed
-  (:require [nandoolle.langchain4clj.core :as llm]
-            [nandoolle.langchain4clj.resilience :as resilience]))
+  (:require [langchain4clj.core :as llm]
+            [langchain4clj.resilience :as resilience]))
 
 ;; Region-aware configuration
 (defn create-regional-model [region]
@@ -867,7 +867,7 @@ Exception: All providers failed or unavailable
 ### Combining with Streaming
 
 ```clojure
-(require '[nandoolle.langchain4clj.streaming :as streaming])
+(require '[langchain4clj.streaming :as streaming])
 
 ;; Create resilient streaming model
 (def streaming-model
@@ -885,7 +885,7 @@ Exception: All providers failed or unavailable
 ### Combining with Tools
 
 ```clojure
-(require '[nandoolle.langchain4clj.tools :as tools])
+(require '[langchain4clj.tools :as tools])
 
 (def resilient-tool-model
   (resilience/create-resilient-model

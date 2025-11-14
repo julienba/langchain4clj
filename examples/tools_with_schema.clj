@@ -1,7 +1,7 @@
 (ns examples.tools-with-schema
   "Exemplo de tools usando Plumatic Schema em vez de Malli"
-  (:require [nandoolle.langchain4clj :as llm]
-            [nandoolle.langchain4clj.agents :as agents]
+  (:require [langchain4clj :as llm]
+            [langchain4clj.agents :as agents]
             [schema.core :as s]
             [schema.coerce :as coerce])
   (:import [dev.langchain4j.agent.tool ToolSpecification]

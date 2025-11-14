@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. This change
 Added comprehensive image generation support using OpenAI's DALL-E models, following the established langchain4clj architecture patterns.
 
 **Changes:**
-- **Created `nandoolle.langchain4clj.image` namespace** with full DALL-E integration
+- **Created `langchain4clj.image` namespace** with full DALL-E integration
 - **Added `create-image-model` multimethod** - Dispatches on `:provider` keyword (currently supports `:openai`)
 - **Added `openai-image-model` convenience function** - Matches pattern from `core.clj` (e.g., `openai-model`, `anthropic-model`)
 - **Added `generate` function** - Generates images from text prompts
@@ -19,7 +19,7 @@ Added comprehensive image generation support using OpenAI's DALL-E models, follo
 
 **API Design:**
 ```clojure
-(require '[nandoolle.langchain4clj.image :as image])
+(require '[langchain4clj.image :as image])
 
 ;; Using multimethod with provider dispatch
 (def model (image/create-image-model
@@ -86,8 +86,8 @@ Added comprehensive image generation support using OpenAI's DALL-E models, follo
 ```
 
 **Files added:**
-- `src/nandoolle/langchain4clj/image.clj` - 160 lines (implementation)
-- `test/nandoolle/langchain4clj/image_test.clj` - 280 lines (comprehensive tests)
+- `src/langchain4clj/image.clj` - 160 lines (implementation)
+- `test/langchain4clj/image_test.clj` - 280 lines (comprehensive tests)
 - `examples/image_generation_demo.clj` - 320 lines (9 examples)
 
 **Future extensibility:** The multimethod design allows easy addition of other image generation providers (Stability AI, Midjourney, etc.) by simply adding new `defmethod` implementations.
@@ -146,8 +146,8 @@ Added automatic parameter normalization to bridge the gap between Clojure's idio
 **Testing:** ✅ All 182 tests passing (496 assertions, 0 failures, 0 errors)
 
 **Files changed:**
-- `src/nandoolle/langchain4clj/tools.clj` - Added normalization functions and integration (52 new lines)
-- `test/nandoolle/langchain4clj/tools_test.clj` - Added comprehensive normalization tests (137 new lines)
+- `src/langchain4clj/tools.clj` - Added normalization functions and integration (52 new lines)
+- `test/langchain4clj/tools_test.clj` - Added comprehensive normalization tests (137 new lines)
 
 ---
 
@@ -177,8 +177,8 @@ Standardized all docstrings to English for better international accessibility an
 **Testing:** ✅ All 175 tests passing (451 assertions, 0 failures, 0 errors)
 
 **Files changed:**
-- `src/nandoolle/langchain4clj.clj` - 4 docstrings + 1 error message
-- `test/nandoolle/langchain4clj_test.clj` - 1 test description
+- `src/langchain4clj.clj` - 4 docstrings + 1 error message
+- `test/langchain4clj_test.clj` - 1 test description
 
 ---
 
@@ -332,7 +332,7 @@ Comprehensive code cleanup to improve maintainability and establish quality stan
 **🛡️ Automatic Retry and Fallback Between Providers** - Production-ready high availability
 
 **Phase 1 Complete - Basic Failover:**
-- **New namespace**: `nandoolle.langchain4clj.resilience`
+- **New namespace**: `langchain4clj.resilience`
 - **Core function**: `create-resilient-model` - Wraps ChatModel with automatic failover
 - **Intelligent error classification**:
   - Retryable errors (429, 503, timeout) → Retry on same provider
@@ -360,7 +360,7 @@ Comprehensive code cleanup to improve maintainability and establish quality stan
 
 **Example usage:**
 ```clojure
-(require '[nandoolle.langchain4clj.resilience :as resilience])
+(require '[langchain4clj.resilience :as resilience])
 
 (def model
   (resilience/create-resilient-model
@@ -419,7 +419,7 @@ Comprehensive code cleanup to improve maintainability and establish quality stan
 
 **Example usage with circuit breaker:**
 ```clojure
-(require '[nandoolle.langchain4clj.resilience :as resilience])
+(require '[langchain4clj.resilience :as resilience])
 
 (def model
   (resilience/create-resilient-model
@@ -467,7 +467,7 @@ Comprehensive code cleanup to improve maintainability and establish quality stan
   - `with-defaults` - Config with fallback values
   - `kebab->camel` - Automatic case conversion
   - `build-field-map` - Automatic field map generation
-- **New namespace**: `nandoolle.langchain4clj.macros` with comprehensive test suite (9 tests, 30 assertions)
+- **New namespace**: `langchain4clj.macros` with comprehensive test suite (9 tests, 30 assertions)
 - **Example**: `examples/macros_demo.clj` demonstrating all new macros
 
 **🚀 New Idiomatic Core API (Phase 1.2)**
@@ -521,7 +521,7 @@ Comprehensive code cleanup to improve maintainability and establish quality stan
 - ✅ Simple - Just parse and use
 
 **⚡ Streaming Responses Support (Phase 2.1)** 🆕 (Feb 2025)
-- **New namespace**: `nandoolle.langchain4clj.streaming`
+- **New namespace**: `langchain4clj.streaming`
 - **Core functions**:
   - `create-streaming-model` - Create streaming models (multimethod for all providers)
   - `stream-chat` - Stream responses with callbacks
@@ -715,7 +715,7 @@ All Phase 1 goals achieved in January 2025:
   - :openai method uses `build-openai-model`
   - :anthropic method uses `build-anthropic-model`
   - External API unchanged - `create-model` still works identically
-- `core.clj` now requires `nandoolle.langchain4clj.macros`
+- `core.clj` now requires `langchain4clj.macros`
 - All existing tests pass without modification (7 tests, 25 assertions)
 
 **Migration Path**:
@@ -750,5 +750,5 @@ All Phase 1 goals achieved in January 2025:
 - Files from the new template.
 - Widget maker public API - `make-widget-sync`.
 
-[Unreleased]: https://github.com/nandoolle/langchain4clj/compare/0.1.1...HEAD
-[0.1.1]: https://github.com/nandoolle/langchain4clj/compare/0.1.0...0.1.1
+[Unreleased]: https://github.com/langchain4clj/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/langchain4clj/compare/0.1.0...0.1.1

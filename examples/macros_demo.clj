@@ -1,6 +1,6 @@
 (ns examples.macros-demo
   "Demonstrates the new idiomatic macros for builder patterns."
-  (:require [nandoolle.langchain4clj.macros :as macros])
+  (:require [langchain4clj.macros :as macros])
   (:import [dev.langchain4j.model.chat.request ChatRequest]
            [dev.langchain4j.data.message UserMessage]
            [dev.langchain4j.model.chat.request.json JsonStringSchema JsonIntegerSchema]))

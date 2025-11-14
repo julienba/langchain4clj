@@ -50,7 +50,7 @@ chmod +x quick-test.sh
 ```
 🧪 Running tests...
 
-Testing nandoolle.langchain4clj.core-test
+Testing langchain4clj.core-test
 ...
 Ran 45 tests containing 123 assertions.
 3 failures, 2 errors.
@@ -141,7 +141,7 @@ Test Results Analysis
 ### Workflow 1: Desenvolvimento Rápido
 ```bash
 # Fazer mudanças
-vim src/nandoolle/langchain4clj/core.clj
+vim src/langchain4clj/core.clj
 
 # Testar
 ./quick-test.sh
@@ -253,10 +253,10 @@ test-summary-*.txt
 Use `clojure` diretamente:
 ```bash
 # Namespace específico
-clojure -M:dev:test -n nandoolle.langchain4clj.core-test
+clojure -M:dev:test -n langchain4clj.core-test
 
 # Teste específico
-clojure -M:dev:test -v nandoolle.langchain4clj.core-test/test-chat
+clojure -M:dev:test -v langchain4clj.core-test/test-chat
 ```
 
 ---

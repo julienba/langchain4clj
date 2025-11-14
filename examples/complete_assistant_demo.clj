@@ -3,10 +3,10 @@
    1. Memory Management
    2. Tool Execution Loop  
    3. Structured Output"
-  (:require [nandoolle.langchain4clj.core :as llm]
-            [nandoolle.langchain4clj.assistant :as assistant]
-            [nandoolle.langchain4clj.tools :as tools]
-            [nandoolle.langchain4clj.structured :as structured]
+  (:require [langchain4clj.core :as llm]
+            [langchain4clj.assistant :as assistant]
+            [langchain4clj.tools :as tools]
+            [langchain4clj.structured :as structured]
             [clojure.spec.alpha :as s]))
 
 ;; ============================================================================
