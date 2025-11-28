@@ -471,6 +471,44 @@
       :log-requests false
       :log-responses false})))
 
+(defn mistral-model
+  "Creates a Mistral chat model from a configuration map.
+  Supports threading-first pattern.
+
+  Config keys:
+  - :api-key (required) - Your OpenAI API key
+  - :model (optional) - Model name, defaults to \"gpt-4o-mini\"
+  - :temperature (optional) - Temperature 0.0-2.0, defaults to 0.7
+  - :timeout (optional) - Timeout in milliseconds, defaults to 60000
+  - :log-requests? (optional) - Log requests, defaults to false
+  - :log-responses? (optional) - Log responses, defaults to false
+  - :max-retries (optional) - Maximum retry attempts
+  - :max-tokens (optional) - Maximum tokens to generate
+
+  Examples:
+
+  ;; Simple usage
+  (mistral-model {:api-key \"sk-...\"})
+
+  ;; With configuration
+  (mistral-model {:api-key \"sk-...\"
+                  :model \"gpt-4\"
+                  :temperature 0.8})
+
+  ;; Threading-first pattern
+  (-> {:api-key \"sk-...\"}
+      (assoc :model \"mistral-medium-2508\")
+      (assoc :temperature 0.8)
+      mistral-model)"
+  [config]
+  (build-mistral-model
+   (macros/with-defaults config
+     {:model "mistral-medium-2508"
+      :temperature 0.7
+      :timeout 60000
+      :log-requests? false
+      :log-responses? false})))
+
 (defn with-model
   "Sets the model name. Use in threading.
 
